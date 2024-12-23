@@ -1,0 +1,26 @@
+cmake_minimum_required(VERSION 3.13)
+project(final_project)
+set(CMAKE_CXX_STANDARD 17)
+set(SOURCE_FILES main.cpp)
+
+
+add_executable(final_project ${SOURCE_FILES})
+
+include_directories("C:/MinGW/mingw64/include")
+target_link_directories(final_project PUBLIC "C:/MinGW/mingw64/lib")
+
+target_link_libraries(final_project opengl32 glfw3dll glew32.dll gdi32 freetyped)
+
+######
+# If you are on the Lab Machines, or have installed the OpenGL libraries somewhere
+# other than on your path, leave the following two lines uncommented and update
+# the path.  The current path is for the lab environments.
+#
+# If your installations are on your path, then comment these two lines
+######
+
+# include_directories("Z:/CSCI441/include")
+# target_link_directories(lab2 PUBLIC "Z:/CSCI441/lib")
+
+# the following line is linking instructions for Windows.  comment if on OS X, otherwise leave uncommented
+# target_link_libraries(lab2 stbimage opengl32 glfw3 glew32.dll gdi32 freetyped)
